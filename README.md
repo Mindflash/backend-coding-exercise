@@ -1,10 +1,10 @@
 # Mindflash Backend Coding Exercise
-Our goal is to give you a small coding challenge that gives you a chance to show off your skills while giving you an idea of some of the problems that you may encounter at Mindflash. We know you're busy with life, so we hope that you can spend around 2 hours working through this exercise. We don't expect you to finish in 2 hours, so don't worry if you can't. Submit what you have along with some notes on your thoughts and how you would proceed if you have more time. Most importantly, try to have some fun with it!
+Our goal is to give you a small coding challenge that gives you a chance to show off your skills while giving you an idea of some of the problems that you may encounter at Mindflash. We know you're busy with life, so we hope that you can spend around 2 hours working through this exercise. We don't expect you to finish in 2 hours, so don't worry if you can't. Submit what you have along with some notes on your thoughts and how you would proceed if you had more time. Most importantly, try to have some fun with it!
 
 **Lastly, your code is yours to keep, publish, delete, or blog about. However, please no mentions of Mindflash should you choose to share or publish it.**
 
 ## Task
-Your task is to build a small application using that filters, transforms, and indexes a stream of events from NSQ (a real-time distributed messaging platform) into Elasticsearch (a highly performant and scalable search/aggregation engine).
+Your task is to build a small application that filters, transforms, and indexes a stream of events from NSQ (a real-time distributed messaging platform) into Elasticsearch (a highly performant and scalable search/aggregation engine).
 
 <p align="center">
 <img src="./architecture.png" align="center" alt="architecture diagram" />
@@ -25,7 +25,7 @@ At a high level:
 - A user may attempt a course many times
 - Users can perform actions that trigger events
 
-Our focus for this exercise are the domain events. Events are published on an [NSQ Topic](http://nsq.io). An event message represents a single event and is serialized as JSON. A sample event is shown below: 
+Our focus for this exercise is the domain events. Events are published on an [NSQ Topic](http://nsq.io). An event message represents a single event and is serialized as JSON. A sample event is shown below: 
 
 ###### Sample Event Message
 ```json

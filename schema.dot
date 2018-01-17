@@ -1,0 +1,12 @@
+digraph schema {
+    rankdir=BT;
+    account [label="Account" shape="oval"];
+    attempt [label="Attempt" shape="oval"];
+    course [label="Course" shape="oval"];
+    event [label="Event" shape="oval"];
+    user [label="User" shape="oval"];
+
+    course, user -> account
+    attempt -> course, user
+    event -> attempt, user
+}

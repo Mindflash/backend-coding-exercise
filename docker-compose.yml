@@ -13,6 +13,11 @@ services:
       - ./brainspark/config.yml:/etc/brainspark/config.yml
     environment:
       BRAINSPARK_NSQ_HOST: nsqd:4150
+  
+  elasticsearch:
+    image: elasticsearch:5.5
+    ports:
+      - "9200:9200"
 
   nsqlookupd:
     image: nsqio/nsq

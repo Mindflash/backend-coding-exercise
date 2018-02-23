@@ -1,3 +1,69 @@
+###############################################################################
+## fixture settings
+###############################################################################
+fixtures:
+  accounts:
+    # the number of fake accounts to seed
+    n: 20
+  
+  courses:
+    # the maximum number of courses to seed per account
+    max: 100
+  
+  users:
+    # the maximum number of users to seed per account
+    max: 50
+
+###############################################################################
+## jsonrpc settings
+###############################################################################
+http:
+  # sets the upper bound for simulated network latency
+  max_latency: 200
+
+  # jsonrpc server port
+  port: "8080"
+
+###############################################################################
+## in memory repository settings
+###############################################################################
+inmem:
+  # the number of attempts to keep in memory, afterwhich 
+  # older attempts will be truncated
+  size: 10000
+
+###############################################################################
+## event diversity settings
+###############################################################################
+lifecycle:
+  # the number of active attempts at any given time
+  n: 100
+
+  odds:
+    # the threshold over which events will have type FOO
+    foo: 0.99
+
+    # the threshold over which events will be reset events
+    reset: 0.99
+  
+  steps:
+    # the minimum/maximum number of progress events in any attempt lifecycle
+    min: 3
+    max: 65
+
+###############################################################################
+## log settings
+###############################################################################
 log:
   format: text
   level: info
+
+###############################################################################
+## activity stream settings
+###############################################################################
+seed:
+  # how frequently events are published
+  interval: 1s
+
+  # the maximum number of events in any given batch
+  max: 20

@@ -1,20 +1,18 @@
 digraph architecture {
     nsq [label="NSQ" style="filled" fillcolor="skyblue1"]
-    brainspark [label="Brainspark API" shape="egg" style="filled" fillcolor="orange"]
-    es [label="ElasticSearch" shape="egg" style="filled" fillcolor="lightseagreen"]
+    brainspark [label="Brainspark API" style="filled" fillcolor="orange"]
+    es [label="ElasticSearch" style="filled" fillcolor="lightseagreen"]
     
-
-    brainspark->nsq [label="publish\nevents"]
-    app->nsq [label="consume\nevents"]
-    app->es [label="index\n events"]
-    brainspark->es [label="search &\n   aggregate"]
-    app->brainspark [label="query\n  related\ndata"]
+    brainspark->nsq [label=" 1) publish\nevents"]
+    nsq->app [label="2) consume   \nevents"]
+    app->brainspark [style="dashed" label="3) query\n  related\ndata"]
+    app->es [label="4) index\n                       events                 "]
+    es->brainspark [label="5) search &\n   aggregate"]
+    
 
     subgraph clusterApp {
         color="lightgrey"
         style="filled"
         app [label="Your App" shape="rect" style="filled" fillcolor="gold"]
-
-        app->app [label="filter &\n   hydrate\n    events"]
     }
 }

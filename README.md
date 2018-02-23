@@ -25,7 +25,7 @@ At a high level:
 - A user may attempt a course many times
 - Users can perform actions that trigger events
 
-Our focus for this exercise is the domain events. Events are published on an [NSQ Topic](http://nsq.io). An event message represents a single event and is serialized as JSON. A sample event is shown below: 
+Our focus for this exercise is the domain events. Events are published on the `events` [NSQ Topic](http://nsq.io). An event message represents a single event and is serialized as JSON. A sample event is shown below: 
 
 ###### Sample Event Message
 ```json
@@ -131,12 +131,12 @@ $ docker-compose start brainspark
 ```
 
 ## Requirements
-- you may build your application using `node.js` or `go`
+- your application should be writtin in `node.js` or `go`
 - you should include a `Dockerfile` in the root of your repository
 - your code should be linted
     - nodejs: use `eslint` with `eslint-config-airbnb-base`
     - go: use `golint`
-- your code should include a couple tests
+- your code should include at least a couple of tests
 - your code should include a `README.md` file in the root with instructions for building, running, and testing. It can also include notes on your throught process and any issues you may have run into.
 
 ## Evaluation
